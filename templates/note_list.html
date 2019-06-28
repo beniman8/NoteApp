@@ -4,11 +4,44 @@
 
 
 <div class="text-center mt-5">
-   <h2>TO-DO List</h2>
+   <h2>TO-DO List <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fas fa-plus"></i>
+  </a></h2>
+   
 
 
 </div>
 <hr>
+
+<div class="collapse mb-5 mt-5" id="collapseExample">
+  <div class="card card-body">
+  <div class="bd-example">
+    <form method ="POST" >
+{% csrf_token %}
+  <div class="form-group" >
+    <label for="id_title">Title </label>
+    {{form.title}}
+    
+  </div>
+  <div class="form-group">
+    <label for="id_due_date">Due Date</label>
+   {{form.due_date}}
+   <small id="emailHelp" class="form-text text-muted">YYYY/DD/MM</small>
+  </div>
+  <div class="form-group ">
+  <label class="" for="id_label">Label</label>
+    {{form.label}}
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form> 
+</div>
+
+</div>
+</div>
+
+
+
 <div class="row">
    {% for note in to_do_list %}
    <div class="col-12">

@@ -15,7 +15,7 @@ h4{
 
 </style>
 
-<div class="card">
+<div class="card mt-3 mb-3">
          <div class="card-body">
             <h4>{{note_snippet_var.title}}
                <span class="badge badge-{{note_snippet_var.get_label_display}}">
@@ -24,15 +24,15 @@ h4{
                <span class="icons">
                {% if type == "DELETE" %}
                
-                <a href="{% url 'finish-note-item' note_snippet_var.id %}"><i class="fas fa-check" ></i></a>
+                <a href="{{note_snippet_var.get_finish_item_url}}"><i class="fas fa-check" ></i></a>
                
 
                {% else %}
                
-                <a href="{% url 'recover-note-item' note_snippet_var.id %}"><i class="fas fa-times" ></i></a>
+                <a href="{{note_snippet_var.get_recover_item_url}}"><i class="fas fa-times" ></i></a>
                {% endif %}
                
-               <a href="{% url 'delete-note-item' note_snippet_var.id %}"><i class="fas fa-trash" style="color:red"></i></a>
+               <a href="{{note_snippet_var.get_delete_item_url}}"><i class="fas fa-trash" style="color:red"></i></a>
                </span>
                
 
